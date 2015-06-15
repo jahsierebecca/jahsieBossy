@@ -1,0 +1,204 @@
+@import "bourbon";
+// @import "partials/grid-settings";
+// @import "variables";
+// @import "../app/assets/stylesheets/neat";
+// @import "typography";
+@import "neat";
+@import url("http://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300italic,400,600,800");
+
+
+$main: #1D2F3E;
+
+$emphasis1: #0F9FB4;
+$emphasis2: #0FB493;
+// $emphasis3:
+$dark: #152737;
+$light: #C9E1C1;
+$back: #FAF4F9;
+
+$mobile: new-breakpoint(max-width 480px);
+$desktop: new-breakpoint(min-width 850px);
+
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+// .clearfix::after {
+//     content: "";
+//     display: block;
+//     height: 0;
+//     clear: both;
+//     visibility: hidden;
+// }
+html, body, body div, span, object, iframe, h1, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    // font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+	background-color: $back;
+	font-family: 'Open Sans';
+	text-align: center;
+}
+
+
+h1, h2, h3, h4, h5 {
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.5em;
+	@include vertical-align;
+	color: $dark;
+}
+
+h2 {
+	font-size: 2em;
+	color: $dark;
+}
+
+a {
+	color: $emphasis1;
+}
+
+.fa {
+	margin: 0 5px;
+}
+
+.column {
+	padding: 5%;
+}
+
+.center {
+	text-align: center;
+}
+
+// .project {
+// 	max-height: 40vh;
+// }
+.project-brief {
+	text-align: center;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.portfolio-pic {
+	max-width: 90%;
+	margin: auto;
+	max-height: 600px;
+}
+
+
+.project-body {
+	height: 100%;
+	// padding: 5%;
+}
+
+.project-text {
+	// @include vertical-align;
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	height: 100%;
+}
+
+.hide {
+	display: none;
+}
+
+button {
+	// height: 10px;
+	margin: auto;
+	background-color: transparent;
+	border: .5px solid $emphasis1;
+}
+.section {
+	margin-top: 10vh;
+}
+
+#contact {
+	// clear: both;
+	bottom: 0;
+	// height: 200px;
+	padding: 1%;
+	text-align: center;
+	// @include vertical-align;
+	background-color: $emphasis2;
+}
+
+#header {
+	height: 85vh;
+	// background-color: $main;
+	background-image: url('../../imgs/img14.jpg');
+	background-position: cover;
+}
+
+#skills-list {
+	@include outer-container;
+	.skill {
+  		@include media($mobile) {
+  			@include span-columns(12);
+  			padding: 10%;
+		}
+  		@include media($desktop) {
+    		@include span-columns(4);
+  		}
+	}
+}
+
+#tools {
+	@include outer-container;
+	text-align: center;
+	max-width: 800px;
+}
+
+.project {
+	@include outer-container;
+	padding: 5%;
+	border-top: 1px solid $main;
+	.project-img {
+  		@include media($mobile) {
+  			@include span-columns(12);
+		}
+  		@include media($desktop) {
+    		@include span-columns(8);
+  		}
+	}
+	.project-body {
+  		@include media($mobile) {
+  			@include span-columns(12);
+		}
+  		@include media($desktop) {
+    		@include span-columns(4);
+  		}
+	}
+}
+
+
+// .project {
+// 	@include outer-container;
+// 	padding: 5%;
+// 	border-top: 1px solid $main;
+// 	.child {
+//   		@include media($mobile) {
+//   			@include span-columns(12);
+// 		}
+//   		@include media($desktop) {
+//     		@include span-columns(6);
+//   		}
+// 	}
+// }
